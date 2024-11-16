@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Signup = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
@@ -15,10 +16,10 @@ const Signup = () => {
 
     axios
       .post("http://localhost:4000/signup", payload)
-      .then((result) =>{
-        alert('Account created')
-        console.log(result)
-        navigate('/login')
+      .then((result) => {
+        alert("Account created");
+        console.log(result);
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err);
@@ -34,22 +35,17 @@ const Signup = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md w-full bg-white p-8 rounded-md shadow-md overflow-hidden relative">
-   
-
-      
-
-      {/* <div className=" h-5  w-full  bg-indigo-500 transform skew-y-6 origin  "></div> */}
+        {/* <div className=" h-5  w-full  bg-indigo-500 transform skew-y-6 origin  "></div> */}
         <div className="text-center mb-4">
-        
-          
-         
           <h2 className="text-3xl font-extrabold text-gray-900">Signup</h2>
-          
         </div>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
               Name
             </label>
             <input
@@ -63,7 +59,10 @@ const Signup = () => {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email address
             </label>
             <input
@@ -77,7 +76,10 @@ const Signup = () => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <input
@@ -103,7 +105,7 @@ const Signup = () => {
           </div>
 
           <p className="text-sm text-gray-600">
-            Already have an account{' '}
+            Already have an account{" "}
             <button
               onClick={formHandle1}
               className="text-indigo-500 hover:underline focus:outline-none focus:ring focus:border-indigo-300 transition-all duration-300"
@@ -114,7 +116,6 @@ const Signup = () => {
         </form>
 
         <div className="absolute h-full w-full bg-indigo-500 transform -skew-y-6 origin-bottom-right"></div>
-       
       </div>
     </div>
   );
